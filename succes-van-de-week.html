@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -210,7 +209,7 @@
   <div class="page">
     <div class="card">
       <div class="media">
-        @{if(empty(outputs('Selecteren')?['body']?[0]?['image']), 'https://via.placeholder.com/1200x800?text=Geen+afbeelding', outputs('Selecteren')?['body']?[0]?['image'])}
+        <img src="https://cdn.hubblecontent.osi.office.net/m365content/publish/5906baa6-87c4-45fd-af81-f1c532976d87/thumbnails/large.jpg?file=image.jpg" alt="Succes van de week" />
         <div class="footer-note">Romijnders</div>
       </div>
 
@@ -220,13 +219,13 @@
           Succes van de week
         </div>
 
-        <h1 class="title">@{outputs('Selecteren')?['body']?[0]?['title']}</h1>
+        <h1 class="title">Succes van de week</h1>
 
-        <p class="summary">@{outputs('Selecteren')?['body']?[0]?['summary']}</p>
+        <p class="summary">In mei 2026 starten ze op de afdeling Elektra met een grootschalig renovatieproject bij Hagemans. In totaal worden 104 woningen aangepakt en toekomstbestendig gemaakt. De werkzaamheden hebben naar verwachting een looptijd van ongeveer één jaar. Verv…</p>
 
         <div class="meta">
-          <div class="date">@{formatDateTime(outputs('Selecteren')?['body']?[0]?['date'],'dd-MM-yyyy')}</div>
-          @{outputs('Selecteren')?['body']?[0]?['url']}
+          <div class="date">26-02-2026</div>
+          <a class="cta" href="https://romijnders.sharepoint.com" target="_blank" rel="noopener noreferrer">
             Lees meer
           </a>
         </div>
