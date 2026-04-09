@@ -11,6 +11,7 @@
       --accent: #005a9c;
       --accent-light: #e8f1f8;
       --shadow: 0 20px 50px rgba(0, 0, 0, 0.10);
+      --bg: linear-gradient(180deg, #eef4fa 0%, #f8fafc 100%);
     }
 
     * {
@@ -23,7 +24,7 @@
       margin: 0;
       padding: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(180deg, #eef4fa 0%, #f8fafc 100%);
+      background: var(--bg);
       color: var(--text);
       overflow: hidden;
     }
@@ -37,7 +38,7 @@
     .page {
       width: 100vw;
       height: 100vh;
-      padding: 36px;
+      padding: 32px;
       display: flex;
     }
 
@@ -45,11 +46,78 @@
       width: 100%;
       height: 100%;
       display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: 28px;
-      background: rgba(255,255,255,0.9);
+      grid-template-columns: 7fr 3fr;
+      background: rgba(255,255,255,0.94);
       border-radius: 32px;
       box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding: 34px 34px 34px 38px;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 20px;
+      color: var(--muted);
+      font-weight: 600;
+      background: #f3f4f6;
+      border-radius: 999px;
+      padding: 10px 16px;
+      white-space: nowrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      padding: 10px 18px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .title {
+      margin: 0 0 18px 0;
+      font-size: 44px;
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      word-break: break-word;
+    }
+
+    .summary {
+      font-size: 25px;
+      line-height: 1.45;
+      color: #374151;
+      margin: 0;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 12;
+      -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
@@ -82,8 +150,8 @@
 
     .footer-note {
       position: absolute;
-      right: 24px;
-      bottom: 18px;
+      right: 18px;
+      bottom: 14px;
       font-size: 14px;
       color: rgba(255,255,255,0.9);
       font-weight: 600;
@@ -91,97 +159,17 @@
       text-shadow: 0 1px 2px rgba(0,0,0,0.25);
     }
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 42px 42px 42px 0;
-      min-width: 0;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      align-self: flex-start;
-      padding: 10px 18px;
-      margin-bottom: 24px;
-      border-radius: 999px;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 18px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .badge-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .title {
-      margin: 0 0 22px 0;
-      font-size: 46px;
-      line-height: 1.08;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      word-break: break-word;
-    }
-
-    .summary {
-      font-size: 26px;
-      line-height: 1.5;
-      color: #374151;
-      margin: 0 0 28px 0;
-      max-width: 95%;
-      display: -webkit-box;
-      -webkit-line-clamp: 7;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-      margin-top: auto;
-      padding-top: 12px;
-    }
-
-    .date {
-      font-size: 18px;
-      color: var(--muted);
-      font-weight: 600;
-      background: #f3f4f6;
-      border-radius: 999px;
-      padding: 10px 16px;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 700;
-      box-shadow: 0 10px 24px rgba(0, 90, 156, 0.22);
-    }
-
     @media (max-width: 1100px) {
       .card {
         grid-template-columns: 1fr;
       }
 
+      .media {
+        min-height: 38vh;
+      }
+
       .content {
-        padding: 30px;
+        padding: 26px;
       }
 
       .title {
@@ -189,7 +177,12 @@
       }
 
       .summary {
-        font-size: 22px;
+        font-size: 21px;
+        -webkit-line-clamp: 10;
+      }
+
+      .topbar {
+        justify-content: flex-start;
       }
     }
   </style>
@@ -197,12 +190,11 @@
 <body>
   <div class="page">
     <div class="card">
-      <div class="media">
-        <img src="https://cdn.hubblecontent.osi.office.net/m365content/publish/5906baa6-87c4-45fd-af81-f1c532976d87/thumbnails/large.jpg?file=image.jpg" alt="Succes van de week" />
-        <div class="footer-note">Romijnders</div>
-      </div>
-
       <div class="content">
+        <div class="topbar">
+          <div class="date">26-02-2026</div>
+        </div>
+
         <div class="badge">
           <span class="badge-dot"></span>
           Succes van de week
@@ -211,11 +203,11 @@
         <h1 class="title">Succes van de week</h1>
 
         <p class="summary">In mei 2026 starten ze op de afdeling Elektra met een grootschalig renovatieproject bij Hagemans. In totaal worden 104 woningen aangepakt en toekomstbestendig gemaakt. De werkzaamheden hebben naar verwachting een looptijd van ongeveer één jaar. Verv…</p>
+      </div>
 
-        <div class="meta">
-          <div class="date">26-02-2026</div>
-          <a class="cta" href="https://romijnders.sharepoint.com" target="_blank">Lees meer</a>
-        </div>
+      <div class="media">
+        <img src="https://cdn.hubblecontent.osi.office.net/m365content/publish/5906baa6-87c4-45fd-af81-f1c532976d87/thumbnails/large.jpg?file=image.jpg" alt="Succes van de week afbeelding" />
+        <div class="footer-note">Romijnders</div>
       </div>
     </div>
   </div>
