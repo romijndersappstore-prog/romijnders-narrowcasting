@@ -1,1 +1,53 @@
-.github/workflows/update-succes-html.yml
+name: Update Succes van de Week HTML
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository ophalen
+        uses: actions/checkout@v4
+
+      - name: Nieuwe HTML downloaden
+        run: |
+          curl -L "https://drive.google.com/file/d/1GHrqmMY4OmgKucU2jicXZU1bo-OdIjHW/view?usp=drive_link" -o succes-van-de-week.new.html
+
+      - name: Controleren of inhoud gewijzigd is
+        id: check_changes
+        run: |
+          if [ -f succes-van-de-week.html ]; then
+            if cmp -s succes-van-de-week.html succes-van-de-week.new.html; then
+              echo "changed=false" >> $GITHUB_OUTPUT
+            else
+              echo "changed=true" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: HTML vervangen
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          mv succes-van-de-week.new.html succes-van-de-week.html
+
+      - name: Committen en pushen
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add succes-van-de-week.html
+          git commit -m "Automatische update succes-van-de-week.html"
+          git push
+
+      - name: Tijdelijk bestand opruimen
+        if: steps.check_changes.outputs.changed != 'true'
+        run: |
+          rm -f succes-van-de-week.new.html
