@@ -1,1 +1,190 @@
-<!DOCTYPE html><html><head><title>Google Drive - Virus scan warning</title><meta http-equiv="content-type" content="text/html; charset=utf-8"/><style nonce="SmwX8OGZSFD5PEaSwgUI0w">.goog-link-button{position:relative;color:#15c;text-decoration:underline;cursor:pointer}.goog-link-button-disabled{color:#ccc;text-decoration:none;cursor:default}body{color:#222;font:normal 13px/1.4 arial,sans-serif;margin:0}.grecaptcha-badge{visibility:hidden}.uc-main{padding-top:50px;text-align:center}#uc-dl-icon{display:inline-block;margin-top:16px;padding-right:1em;vertical-align:top}#uc-text{display:inline-block;max-width:68ex;text-align:left}.uc-error-caption,.uc-warning-caption{color:#222;font-size:16px}#uc-download-link{text-decoration:none}.uc-name-size a{color:#15c;text-decoration:none}.uc-name-size a:visited{color:#61c;text-decoration:none}.uc-name-size a:active{color:#d14836;text-decoration:none}.uc-footer{color:#777;font-size:11px;padding-bottom:5ex;padding-top:5ex;text-align:center}.uc-footer a{color:#15c}.uc-footer a:visited{color:#61c}.uc-footer a:active{color:#d14836}.uc-footer-divider{color:#ccc;width:100%}.goog-inline-block{position:relative;display:-moz-inline-box;display:inline-block}* html .goog-inline-block{display:inline}:first-child+html .goog-inline-block{display:inline}sentinel{}</style><link rel="icon" href="//www.gstatic.com/images/branding/productlogos/drive_2026/v1/web-32dp/logo_drive_2026_color_1x_web_32dp.png"/></head><body><div class="uc-main"><div id="uc-dl-icon" class="image-container"><div class="drive-sprite-aux-download-file"></div></div><div id="uc-text"><p class="uc-warning-caption">Google Drive can't scan this file for viruses.</p><p class="uc-warning-subcaption">We are experiencing technical difficulties. Would you still like to download this file? <span class="uc-name-size"><a href="/open?id=1GHrqmMY4OmgKucU2jicXZU1bo-OdIjHW">succes-van-de-week.html</a> (3.6k)</span></p><form id="download-form" action="https://drive.usercontent.google.com/download" method="get"><input type="submit" id="uc-download-link" class="goog-inline-block jfk-button jfk-button-action" value="Download anyway"/><input type="hidden" name="id" value="1GHrqmMY4OmgKucU2jicXZU1bo-OdIjHW"><input type="hidden" name="export" value="download"><input type="hidden" name="confirm" value="t"><input type="hidden" name="uuid" value="79d47876-a73e-413e-95ad-e34f23fdbd4b"></form></div></div><div class="uc-footer"><hr class="uc-footer-divider"></div></body></html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Succes van de week</title>
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #274f87;
+      --card-bg: #ffffff;
+      --page-bg: #f3f5f7;
+      --shadow: 0 18px 42px rgba(0,0,0,0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--page-bg);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .page {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--page-bg);
+      padding: 38px 46px 34px 46px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      width: 78%;
+      min-width: 0;
+      border-radius: 0;
+      padding: 30px 36px 34px 36px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .date-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 34px;
+    }
+
+    .date {
+      font-size: 18px;
+      line-height: 1.2;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .title {
+      margin: 0 auto 30px auto;
+      font-size: 40px;
+      line-height: 1.08;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .article {
+      flex: 0 1 auto;
+      min-height: 0;
+      overflow: hidden;
+      color: #425466;
+      font-size: 28px;
+      line-height: 1.46;
+      white-space: pre-line;
+      word-break: break-word;
+    }
+
+    .article p {
+      margin: 0 0 18px 0;
+    }
+
+    .article ul,
+    .article ol {
+      margin: 8px 0 18px 28px;
+      padding: 0;
+    }
+
+    .article li {
+      margin-bottom: 8px;
+    }
+
+    .sharepoint-note {
+      margin-top: 24px;
+      font-size: 20px;
+      line-height: 1.35;
+      color: #274f87;
+      font-weight: 600;
+      text-align: right;
+      align-self: flex-end;
+    }
+
+    @media (max-width: 1400px) {
+      .card {
+        width: 84%;
+      }
+
+      .title {
+        font-size: 34px;
+      }
+
+      .article {
+        font-size: 21px;
+      }
+
+      .sharepoint-note {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .page {
+        padding: 24px;
+      }
+
+      .card {
+        width: 100%;
+        padding: 24px;
+      }
+
+      .date-row {
+        justify-content: flex-end;
+        margin-bottom: 24px;
+      }
+
+      .date {
+        text-align: right;
+        white-space: normal;
+      }
+
+      .title {
+        font-size: 30px;
+        margin: 0 auto 24px auto;
+        max-width: 100%;
+      }
+
+      .article {
+        font-size: 19px;
+      }
+
+      .sharepoint-note {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <div class="date-row">
+        <div class="date">06-05-2026</div>
+      </div>
+
+      <h1 class="title">Succes van de week</h1>
+
+      <div class="article">Bij het stadskantoor in Arnhem zijn de koelmachine en condensor vervangen. De koelmachine bevindt zich in de technische ruimte op de 7e etage, terwijl de condensor op het dak staat. Als voorbereiding zijn beide installaties eerst afgekoppeld. Vervol…</div>
+
+      <div class="sharepoint-note">Lees verder op SharePoint</div>
+    </div>
+  </div>
+</body>
+</html>
